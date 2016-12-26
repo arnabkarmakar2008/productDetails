@@ -28,19 +28,19 @@ public class ProductDetailsController {
 	@Autowired
 	ProductDetailsService productDetailsService;
 	
-	@RequestMapping(value = "/products/{id}" , method = RequestMethod.GET)
-	public ProductDetails productPriceById(@PathVariable long id) {
+	@RequestMapping(value = "/products/{id}" , method = RequestMethod.GET, produces="application/json")
+	public ResponseEntity<ProductDetails> productPriceById(@PathVariable long id) {
 		logger.info("Entered ProductDetailsController.productPriceById()");
 		ProductDetails productDetails = productDetailsService.processProductPriceDetails(id);
 		
 		if(productDetails == null) {
-			throw new ProductNotFoundException(id);
+			return new ResponseEntity<ProductDetails>(HttpStatus.NOT_FOUND);
 		}
 		logger.info("Exited ProductDetailsController.productPriceById()");
-		return productDetails;
+		return new ResponseEntity<ProductDetails>(productDetails, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/products/{id}" , method = RequestMethod.PUT)
+	@RequestMapping(value = "/products/{id}" , method = RequestMethod.PUT, produces="application/json", consumes="application/json")
 	public ResponseEntity<ProductDetails> updateProductPrice(@PathVariable long id, @RequestBody ProductDetails productDetails) {
 		logger.info("Entered ProductDetailsController.updateProductPrice()");
 		

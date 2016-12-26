@@ -68,7 +68,7 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
 		
 		try {
 			RestTemplate restTemplate = new RestTemplate();
-			ResponseEntity<ProductWrapper> response = restTemplate.getForEntity(productDetailsURL, ProductWrapper.class, productId);
+			ResponseEntity<ProductWrapper> response = restTemplate.getForEntity(getProductDetailsURL(), ProductWrapper.class, productId);
 			
 			if(response.getStatusCode() == HttpStatus.OK) {
 				wrapper = response.getBody();
@@ -83,5 +83,13 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
 		logger.info("Exited ProductDetailsServiceImpl.fetchProductDetails()");
 		return productDetails;
 	}
+
+	public String getProductDetailsURL() {
+		return productDetailsURL;
+	}
+
+	public void setProductDetailsURL(String productDetailsURL) {
+		this.productDetailsURL = productDetailsURL;
+	}	
 	
 }
