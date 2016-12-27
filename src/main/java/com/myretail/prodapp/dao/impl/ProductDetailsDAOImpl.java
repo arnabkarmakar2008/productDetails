@@ -37,7 +37,7 @@ public class ProductDetailsDAOImpl implements ProductDetailsDAO {
 				productPrice = new ProductPrice(productPriceDocument.getPrice(),productPriceDocument.getCode());
 			}
 			
-			logger.info("ProductDetailsDAOImpl.getProductPrice() DB ProductPrice :: "+ productPrice);		
+			logger.debug("ProductDetailsDAOImpl.getProductPrice() DB ProductPrice :: "+ productPrice);		
 		} 
 		catch(Exception exp) {
 			logger.error("ProductDetailsDAOImpl.getProductPrice() :: Error fetching data from DB",exp);

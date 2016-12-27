@@ -30,7 +30,7 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
 	
 	@Override
 	public ProductDetails processProductPriceDetails (long productId) {
-		logger.info("Entered ProductDetailsServiceImpl.processProductPriceDetails() with ProductId :: " + productId);
+		logger.debug("Entered ProductDetailsServiceImpl.processProductPriceDetails() with ProductId :: " + productId);
 		
 		//Call DAO to get Product Price Details
 		ProductPrice productPrice = productDetailsDAO.getProductPrice(productId);		
@@ -40,18 +40,18 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
 		
 		ProductDetails productDetails = ProductDetailsUtil.mergeProductDetails(productPrice, product);	
 		
-		logger.info("Exited ProductDetailsServiceImpl.processProductPriceDetails()");
+		logger.debug("Exited ProductDetailsServiceImpl.processProductPriceDetails()");
 		
 		return productDetails;
 	}
 	
 	@Override
 	public ProductDetails updateProductPriceDetails(ProductDetails productDetails) {
-		logger.info("Entered ProductDetailsServiceImpl.updateProductPriceDetails() with ProductId :: " + productDetails.getId());
+		logger.debug("Entered ProductDetailsServiceImpl.updateProductPriceDetails() with ProductId :: " + productDetails.getId());
 		
 		productDetails = productDetailsDAO.updateProductPrice(productDetails);
 		
-		logger.info("Exited ProductDetailsServiceImpl.updateProductPriceDetails()  productDetails :: " + productDetails);
+		logger.debug("Exited ProductDetailsServiceImpl.updateProductPriceDetails()  productDetails :: " + productDetails);
 		
 		return productDetails;
 	}
@@ -62,7 +62,7 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
 	 * @return Product
 	 */
 	private Product fetchProductDetails (long productId) {
-		logger.info("Entered ProductDetailsServiceImpl.fetchProductDetails() with ProductId :: " + productId);
+		logger.debug("Entered ProductDetailsServiceImpl.fetchProductDetails() with ProductId :: " + productId);
 		ProductWrapper wrapper = null;
 		Product productDetails = null;
 		
@@ -80,7 +80,7 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
 			logger.error("Exception in External Service Call", exp);
 		}
 
-		logger.info("Exited ProductDetailsServiceImpl.fetchProductDetails()");
+		logger.debug("Exited ProductDetailsServiceImpl.fetchProductDetails()");
 		return productDetails;
 	}
 
