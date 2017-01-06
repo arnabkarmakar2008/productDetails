@@ -17,7 +17,7 @@ public class ProductDetailsWebController extends SpringBootServletInitializer {
 	}
 	
 	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(ProductDetailsWebController.class);
-    }
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(ProductDetailsWebController.class);
+	}
 }
