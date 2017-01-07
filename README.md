@@ -39,6 +39,44 @@ myretail image will be created. Now run the image by linking MongoDB container m
 
 docker run -p 8080:8080 -e spring.profiles.active=prod -e spring.data.mongodb.uri=mongodb:// myRetailDB:27017/myretail  -v /logs:/logs —link myRetailDB: myRetailDB —name myretail myretail:1.0
 
+# Test Instructions
+
+## GET Service Test
+Use either SOAPUI or Postman to test this service. Use the URL like http:<host>:<port>/products/138604190 and Method=GET. Set Header Accept=application/json. 
+
+
+
+Service should return HTTP Status 200 and Product Price in JSON as below:
+
+
+{
+  "id": 13860419,
+  "name": "The Rolling Stones: Some Girls - Live in Texas '78",
+  "productPrice": {
+    "value": 18.09,
+    "currencyCode": "USD"
+  }
+}
+
+## PUT Service Test
+Use the URL like http:<host>:<port>/products/138604190 and Method=PUT in PostMan/SOAPUI. Set Header Accept=application/json and Content-Type=application/json. Set Body as below:
+
+
+{
+  "id": 13860419,
+  "name": "The Rolling Stones: Some Girls - Live in Texas '78",
+  "productPrice": {
+    "value": 20.09,
+    "currencyCode": "USD"
+  }
+} 
+
+
+
+Service should return HTTP Status 200 and Product details as passed in the request.
+
+ 
+
 
 
 
