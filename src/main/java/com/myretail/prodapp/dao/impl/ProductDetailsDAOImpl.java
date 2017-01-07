@@ -9,7 +9,6 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
-import com.mongodb.WriteResult;
 import com.myretail.prodapp.dao.ProductDetailsDAO;
 import com.myretail.prodapp.dao.document.ProductPriceDocument;
 import com.myretail.prodapp.entity.ProductDetails;
@@ -63,7 +62,7 @@ public class ProductDetailsDAOImpl implements ProductDetailsDAO {
 				update.set("price", productDetails.getProductPrice().getValue());
 				update.set("code", productDetails.getProductPrice().getCurrencyCode());
 				
-				WriteResult result = mongo.updateFirst(query,update,ProductPriceDocument.class);				
+				mongo.updateFirst(query,update,ProductPriceDocument.class);				
 				
 			}
 			else {

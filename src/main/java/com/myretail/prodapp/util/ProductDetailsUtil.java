@@ -11,6 +11,12 @@ public class ProductDetailsUtil {
 
 	private static Logger logger = LoggerFactory.getLogger(ProductDetailsUtil.class);
 	
+	/**
+	 * Utility method to merge product details fetched from DB and External Service
+	 * @param productPrice - Product Price fetched from DB
+	 * @param product - Product Details fetched from external service
+	 * @return Merged ProductDetails. Null if either productPrice or product is null.
+	 */
 	public static ProductDetails mergeProductDetails(ProductPrice productPrice, Product product ) {
 		
 		ProductDetails productDetails = null;
@@ -21,8 +27,8 @@ public class ProductDetailsUtil {
 		else {
 			try {
 				String productName = product.getItem().getProduct_description().getTitle();
-				long id = Long.parseLong(product.getItem().getTcin());
-				
+				long id = product.getAvailable_to_promise_network().getProduct_id();
+
 				productDetails = new ProductDetails(id, productName, productPrice);
 			}
 			catch(Exception exp) {

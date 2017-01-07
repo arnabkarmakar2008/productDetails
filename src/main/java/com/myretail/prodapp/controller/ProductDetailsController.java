@@ -27,9 +27,16 @@ public class ProductDetailsController {
 	
 	@RequestMapping(value = "/products/{id}" , method = RequestMethod.GET, produces="application/json")
 	public ResponseEntity<ProductDetails> productPriceById(@PathVariable long id) {
+		
 		logger.debug("Entered ProductDetailsController.productPriceById()");
+		
+		//Call Service Method to get Product Details 
 		ProductDetails productDetails = productDetailsService.processProductPriceDetails(id);
 		
+		/*
+		 * If productDetails == null, then Product is not found in DB due to data not present
+		 * or due to some exception in the Service or DAO layer
+		 */
 		if(productDetails == null) {
 			logger.info("Product Price Not Found for Product ID :: " + id);
 			return new ResponseEntity<ProductDetails>(HttpStatus.NOT_FOUND);
@@ -38,15 +45,22 @@ public class ProductDetailsController {
 		logger.info("Product Price Found :: " + productDetails);
 		
 		logger.debug("Exited ProductDetailsController.productPriceById()");
+		
 		return new ResponseEntity<ProductDetails>(productDetails, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/products/{id}" , method = RequestMethod.PUT)
 	public ResponseEntity<ProductDetails> updateProductPrice(@PathVariable long id, @RequestBody ProductDetails productDetails) {
+		
 		logger.debug("Entered ProductDetailsController.updateProductPrice()");
 		
+		//Call Service Method to update Product
 		productDetails = productDetailsService.updateProductPriceDetails(productDetails);
 		
+		/*
+		 * If productDetails == null, then Product is not found in DB due to data not present
+		 * or due to some exception in the Service or DAO layer
+		 */
 		if(productDetails == null) {
 			logger.info("Product Price Not Found for Product ID :: " + id);
 			return new ResponseEntity<ProductDetails>(HttpStatus.NOT_FOUND);

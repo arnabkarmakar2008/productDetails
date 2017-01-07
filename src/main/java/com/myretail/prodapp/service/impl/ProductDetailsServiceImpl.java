@@ -38,6 +38,7 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
 		//Fetch ProductDetails from External Service
 		Product product = fetchProductDetails(productId);
 		
+		//Call utility method to merge product details
 		ProductDetails productDetails = ProductDetailsUtil.mergeProductDetails(productPrice, product);	
 		
 		logger.debug("Exited ProductDetailsServiceImpl.processProductPriceDetails()");
