@@ -45,7 +45,7 @@ myretail image will be created. Now run the image by linking MongoDB container m
 # Test Instructions
 
 ## GET Service Test
-Use either SOAPUI or Postman to test this service. Use the URL like http:<host>:<port>/products/138604190 and Method=GET. Set Header Accept=application/json. 
+Use either SOAPUI or Postman to test this service. Use the URL like http:host:8080/products/138604190 and Method=GET. Set Header Accept=application/json. 
 
 
 
@@ -62,7 +62,7 @@ Service should return HTTP Status 200 and Product Price in JSON as below:
 }
 
 ## PUT Service Test
-Use the URL like http:<host>:<port>/products/138604190 and Method=PUT in PostMan/SOAPUI. Set Header Accept=application/json and Content-Type=application/json. Set Body as below:
+Use the URL like http:host:8080/products/138604190 and Method=PUT in PostMan/SOAPUI. Set Header Accept=application/json and Content-Type=application/json. Set Body as below:
 
 
 {
