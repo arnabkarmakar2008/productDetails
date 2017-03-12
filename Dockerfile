@@ -9,3 +9,4 @@ EXPOSE 8080
 #Comment from productDetailsNew
 #Comment from productDetails
 ENTRYPOINT /usr/local/tomcat/bin/catalina.sh run
+# 1 was here
