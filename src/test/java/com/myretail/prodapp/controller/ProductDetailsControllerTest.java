@@ -51,6 +51,7 @@ public class ProductDetailsControllerTest {
 	@Test
 	public void testProductPriceById() throws Exception {
 		
+		//Comment
 		ProductPrice productPrice = new ProductPrice(100.12, "USD");
 		ProductDetails productDetails = new ProductDetails(13860428, "The Big Lebowski (Blu-ray)", productPrice);
 		long productId = 13860428;

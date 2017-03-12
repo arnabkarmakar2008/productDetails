@@ -30,6 +30,8 @@ public class ProductDetailsDAOImplTest {
 	
 	@Mock 
 	WriteResult writeResultMock;
+
+	//Comment
 	
 	@Before
 	public void setUp() {
