@@ -7,4 +7,5 @@ EXPOSE 8080
 #Comment
 #Comment for TestBranch
 #Comment from productDetailsNew
+#Comment from productDetails
 ENTRYPOINT /usr/local/tomcat/bin/catalina.sh run
