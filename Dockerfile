@@ -6,4 +6,5 @@ RUN touch /usr/local/tomcat/webapps/productDetails-0.0.1-SNAPSHOT.war.dodeploy
 EXPOSE 8080
 #Comment
 #Comment for TestBranch
+#Comment from productDetailsNew
 ENTRYPOINT /usr/local/tomcat/bin/catalina.sh run
