@@ -8,5 +8,6 @@ EXPOSE 8080
 #Comment for TestBranch
 #Comment from productDetailsNew
 #Comment from productDetails
+#Change in MI-1
 ENTRYPOINT /usr/local/tomcat/bin/catalina.sh run
 # 1 was here
