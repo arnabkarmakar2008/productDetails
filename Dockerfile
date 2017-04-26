@@ -5,7 +5,7 @@ COPY productDetails-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 RUN touch /usr/local/tomcat/webapps/productDetails-0.0.1-SNAPSHOT.war.dodeploy
 EXPOSE 8080
 #Comment
-#Comment for TestBranch
+#Comment for TestBranch1
 #Comment from productDetailsNew
 #Comment from productDetails
 ENTRYPOINT /usr/local/tomcat/bin/catalina.sh run
