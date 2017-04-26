@@ -9,5 +9,6 @@ EXPOSE 8080
 #Comment from productDetailsNew
 #Comment from productDetails
 #Change in MI-1
+#Comment from Hotfix
 ENTRYPOINT /usr/local/tomcat/bin/catalina.sh run
 # 1 was here
