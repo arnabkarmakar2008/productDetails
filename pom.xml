@@ -6,7 +6,7 @@
   <artifactId>productDetails</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-
+  <!-- Comment in POM from Mater-->
   <name>productDetails</name>
   <url>http://maven.apache.org</url>
   
