@@ -9,5 +9,6 @@ EXPOSE 8080
 #Comment from productDetailsNew
 #Comment from productDetails
 #Comment from Hotfix
+#Comment from Master
 ENTRYPOINT /usr/local/tomcat/bin/catalina.sh run
 # 1 was here
